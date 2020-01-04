@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+  (C) Klemens Ullmann-Marx / www.ull.at
+  License: GPLv3
+ -->
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+  <script type="text/javascript" src="ic-label-creator.js"></script>                  
+  <script type="text/javascript" src="chips.js"></script>
+</head>
+
+<body style="margin: 5px; padding: 0;">
+
+<svg id="page" >
+</svg>
+
+<p style="font-family: sans-serif; font-size: 10px;">
+  IC-Label Set "Ben Eater 8-Bit Breadboard Computer SAP-1"<br />
+  <a href="https://github.com/klemens-u/ic-label-creator">https://github.com/klemens-u/ic-label-creator</a> 
+  (C) 2020 by Klemens Ullmann-Marx / <a href="https:/www.ull.at">www.ull.at</a>
+</p>
+
+<script> 
+  var globals = {
+    gimmeColor      : true,
+    pageWidth       : 210 - 20, // A4 height minus margin
+    pageHeight      : 279.4 - 40, // ANSI letter height minus margin   
+    pinDistance     : 2.54,
+    // Starting position for first chip on page
+    chipPositionX   : 0,
+    chipPositionY   : 0,
+    svgStrokeWidth  : .1,
+    svgStrokeOffset : .1,
+  };
+  
+  $(document).ready(function() {
+    
+    // Set svg container to page size
+    $('#page').attr({
+      width: globals.pageWidth + 'mm',
+      height: globals.pageHeight + 'mm',
+    });
+    
+    // Draw chips
+    drawChip('74LS00');
+    drawChip('74LS00');
+    
+    drawChip('74LS02');
+    
+    drawChip('74LS04');
+    drawChip('74LS04');
+    drawChip('74LS04');
+    drawChip('74LS04');
+    drawChip('74LS04');
+    
+    drawChip('74LS08');
+    drawChip('74LS08');
+    drawChip('74LS08');
+    
+    drawChip('74LS32'); 
+    
+    drawChip('74LS86');
+    drawChip('74LS86');
+    
+    drawChip('74LS107');
+    
+    drawChip('74LS138');
+    
+    drawChip('74LS139');
+    
+    drawChip('74LS157');    
+    drawChip('74LS157');    
+    drawChip('74LS157');    
+    drawChip('74LS157');
+    
+    drawChip('74LS161');
+    
+    drawChip('74LS173');    
+    drawChip('74LS173');    
+    drawChip('74LS173');    
+    drawChip('74LS173');    
+    drawChip('74LS173');    
+    drawChip('74LS173');    
+    drawChip('74LS173');    
+    drawChip('74LS173');
+    
+    drawChip('74189');
+    drawChip('74189');
+    
+    drawChip('74LS245');    
+    drawChip('74LS245');    
+    drawChip('74LS245');    
+    drawChip('74LS245');    
+    drawChip('74LS245');    
+    drawChip('74LS245');
+    
+    drawChip('74LS273');
+    
+    drawChip('74LS283');
+    drawChip('74LS283');
+    
+    drawChip('28C16');
+    drawChip('28C16');
+    drawChip('28C16');
+    
+  });
+  
+</script> 
+
+</body>
+</html>
