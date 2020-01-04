@@ -26,7 +26,6 @@ How to create your own set of chips:
 ## Background and Acknowledgements
 
 I used this as an opportunity to learn a bit of SVG and wrote a HTML/Javascript/SVG creator for computer IC chips.
-At the moment there is only one monolithic file with a complete set of labels for the Ben Eater's 8-Bit breadboard computer.
 
 Big thanks to Ben Eater for the wonderful videos on YouTube. I learned so much from it and finally understood how a cpu works.
 
