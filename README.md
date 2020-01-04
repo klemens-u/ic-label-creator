@@ -1,6 +1,10 @@
 # ic-label-creator
 Javascript/SVG Label Creator for IC Chips
 
+<img src="/assets/readme-example-labels.png" />
+
+
+
 ## About
 
 This project was inspired by Ben Eater's 8-Bit breadboard computer. Multiple wiring errors while building the SAP-1 breadboard computer lead to the desire to label all chips with the actual pinouts.
