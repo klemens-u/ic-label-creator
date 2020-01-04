@@ -14,7 +14,7 @@ You're also welcome to adapt the script for your own project. If you spot errors
 
 How to create your own set of chips:
 
-- Copy "ben-eater-8bit-computer.html" to a a new file "your-set.html"
+- Copy "ben-eater-8bit-computer.html" to a new file "your-set.html"
 - Add the chips you like to print to section "Draw chips"
 - If your miss chip definitions in "chips.js" please add them and perform a pull request, so I can add them too.
 
