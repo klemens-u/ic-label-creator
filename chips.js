@@ -256,8 +256,8 @@ var chips = {
     datasheet: 'http://www.ti.com/lit/ds/symlink/sn54173.pdf',
     type: 'register',
     pins: {
-      1 : 'OE1',
-      2 : 'OE2',
+      1 : 'O̅E̅1̅',
+      2 : 'O̅E̅2̅',
       3 : '1Q',
       4 : '2Q',
       5 : '3Q',
@@ -265,7 +265,7 @@ var chips = {
       7 : 'CLK',
       8 : '⏚',
       
-      9 : 'I̅E̅1',
+      9 : 'I̅E̅2̅',
       10: 'I̅E̅2̅',
       11: '1D',
       12: '1C',
