@@ -18,15 +18,15 @@ You're also welcome to adapt the script for your own project. If you spot errors
 
 How to create your own set of chips:
 
-- Copy "ben-eater-8bit-computer.html" to a new file "your-set.html"
-- Add the chips you like to print to section "Draw chips"
-- If your miss chip definitions in "chips.js" please add them and perform a pull request, so I can add them too.
-- Simply open your .html file in a browser and print on self-sticking print labels. I used Firefox.
-- If it is a public project please send me your set of labels. (Pull request)
+- Copy "ben-eater-8bit-computer.html" to a new file e.g. "your-set.html"
+- Add the chips you'd like to print to the section "Draw chips"
+- If you miss a chip's definitions in "chips.js" please add them and perform a pull request to contribute.
+- Open your-set.html file in a web browser and print on self-sticking print labels. I used Firefox.
+- If you create a set for public project please contribute it with a pull request
 
 ## Background and Acknowledgements
 
 I used this as an opportunity to learn a bit of SVG and wrote a HTML/Javascript/SVG creator for computer IC chips.
 
-Big thanks to Ben Eater for the wonderful videos on YouTube. I learned so much from it and finally understood how a cpu works.
+Big thanks to Ben Eater for the wonderful videos on YouTube. I learned so much from it and finally understood how exactly a cpu/computer works.
 
