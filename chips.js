@@ -65,7 +65,29 @@ var chips = {
       13: 'A6',
       14: '+',
     },
-  },    
+  },
+  
+  '74LS07' : {
+    description : '6x Buffer',
+    type: 'gate',
+    pins: {
+      1 : 'A1',
+      2 : 'Y1',
+      3 : 'A2',
+      4 : 'Y2',
+      5 : 'A3',
+      6 : 'Y3',
+      7 : '⏚',
+      
+      8 : 'Y4',
+      9 : 'A4',
+      10: 'Y5',
+      11: 'A5',
+      12: 'Y6',
+      13: 'A6',
+      14: '+',
+    },
+  },       
   
   '74LS08' : {
     description : '4xAND',
@@ -240,7 +262,7 @@ var chips = {
       7 : 'ENP',
       8 : '⏚',
       
-      9 : 'LD',
+      9 : 'L̅D̅',
       10: 'ENT',
       11: 'QD',
       12: 'QC',
@@ -300,6 +322,59 @@ var chips = {
     }, 
   },
   
+  '74LS193' : {
+    description : '4b Cnt ↑/↓',
+    type: 'counter',
+    pins: {
+      1 : 'B',
+      2 : 'QB',
+      3 : 'QA',
+      4 : 'DN',
+      5 : 'UP',
+      6 : 'QC',
+      7 : 'QD',
+      8 : '⏚',
+      
+      9 : 'D',
+      10: 'C',
+      11: 'L̅D̅',
+      12: 'C̅A̅R̅',
+      13: 'B̅O̅R̅',
+      14: 'CLR',
+      15: 'A',
+      16: '+',
+    },
+  },  
+  
+  
+  '74LS244' : {
+    description : '8bit Buf/Linedrv',
+    type: 'buffer',
+    pins: {
+      1 : '1̅E̅N̅',
+      2 : '1A1',
+      3 : '2Y4',
+      4 : '1A2',
+      5 : '2Y3',
+      6 : '1A3',
+      7 : '2Y2',
+      8 : '1A4',
+      9 : '2Y1',
+      10: '⏚',
+      
+      11: '2A1',
+      12: '1Y4',
+      13: '2A2',
+      14: '1Y3',
+      15: '2A3',
+      16: '1Y2',
+      17: '2A4',
+      18: '1Y1',
+      19: '2̅E̅N̅',
+      20: '+',
+    },
+  },   
+  
   '74LS245' : {
     description : '8bit Bus Transcv',
     type: 'bus-transceiver',
@@ -332,7 +407,7 @@ var chips = {
     description : '8bit Register',
     type: 'register',
     pins: {
-      1 : 'R̅S̅T̅',
+      1 : 'C̅L̅R̅',
       2 : 'Q0',
       3 : 'D0',
       4 : 'D1',
@@ -532,7 +607,6 @@ var chips = {
     },
   },    
   
-  // empty template
   '555' : {
     description : '',
     type: 'analog',
@@ -547,7 +621,23 @@ var chips = {
       7 : 'DCH',
       8 : '+',
     },
-  },    
+  },
+  
+  'C555' : {
+    description : '',
+    type: 'analog',
+    heightPins: 3,
+    pins: {
+      1 : '⏚',
+      2 : 'TRI',
+      3 : 'OUT',
+      4 : 'RST',
+      5 : 'CTV',
+      6 : 'THR',
+      7 : 'DCH',
+      8 : '+',
+    },
+  },          
   
   // empty template
   ' ' : {
