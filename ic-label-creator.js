@@ -13,7 +13,7 @@ function drawChip(chipName) {
   var chip = chips[chipName];
   var numPins = Object.keys(chip.pins).length;
   var chipWidth = numPins / 2 * globals.pinDistance + 1;
-  var chipHeightPins = ('heigthPins' in chip) ? chip.heigthPins : 3;
+  var chipHeightPins = ('heightPins' in chip) ? chip.heightPins : 3;
   var chipHeight = chipHeightPins * globals.pinDistance;
   
   var $page = $('#page');

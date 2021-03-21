@@ -458,7 +458,7 @@ var chips = {
   '7130LA' : {
     description : '1Kx8 SRAM (1KB)',
     type: 'ram',
-    heigthPins: 6,
+    heightPins: 6,
     pins: {
       1 : 'C̅E̅',
       2 : 'R/W̅',
@@ -516,7 +516,7 @@ var chips = {
   '28C16' : {
     description : '2Kx8 EEPROM (2KB)',
     type: 'eeprom',
-    heigthPins: 6,
+    heightPins: 6,
     pins: {
       1 : 'A7',
       2 : 'A6',
@@ -549,7 +549,7 @@ var chips = {
   '28C64' : {
     description : '8Kx8 EEPROM (8KB)',
     type: 'eeprom',
-    heigthPins: 6,
+    heightPins: 6,
     pins: {
       1 : '--',
       2 : 'A12',
