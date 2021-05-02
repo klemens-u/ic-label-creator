@@ -659,7 +659,7 @@ var chips = {
       7 : 'DCH',
       8 : '+',
     },
-  },    
+  },          
   
   'W65C02' : {
     description : 'CPU',

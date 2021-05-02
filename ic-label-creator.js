@@ -173,6 +173,10 @@ function chipColor(type) {
   
   if (['mux', 'demux', 'via'].includes(type)) {
     return 'green';
+  }
+  
+  if (['counter'].includes(type)) {
+    return 'magenta';
   }    
   
   if (['cpu'].includes(type)) {
