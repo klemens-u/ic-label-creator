@@ -13,7 +13,7 @@ function drawChip(chipName) {
   var chip = chips[chipName];
   var numPins = Object.keys(chip.pins).length;
   var chipWidth = numPins / 2 * globals.pinDistance + 1;
-  var chipHeightPins = ('heigthPins' in chip) ? chip.heigthPins : 3;
+  var chipHeightPins = ('heightPins' in chip) ? chip.heightPins : 3;
   var chipHeight = chipHeightPins * globals.pinDistance;
   
   var $page = $('#page');
@@ -163,7 +163,7 @@ function chipColor(type) {
     return 'black';
   }
   
-  if (['ram', 'eeprom', 'register', 'flipflop'].includes(type)) {
+  if (['ram', 'sram', 'eeprom', 'register', 'flipflop'].includes(type)) {
     return 'red';
   }
   
@@ -171,9 +171,13 @@ function chipColor(type) {
     return 'blue';
   }
   
-  if (['mux', 'demux'].includes(type)) {
+  if (['mux', 'demux', 'via'].includes(type)) {
     return 'green';
   }    
+  
+  if (['cpu'].includes(type)) {
+    return 'darkorange';
+  }
   
   return 'black';
 }
