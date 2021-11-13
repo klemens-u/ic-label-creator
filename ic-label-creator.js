@@ -66,36 +66,28 @@ function drawChip(chipName) {
   jQuery.each(chip.pins, function (pinNum, pinName) {
     
     // bottom side
-    if (pinNum <= numPins/2 ) {
-      svgChip.append($(document.createElementNS("http://www.w3.org/2000/svg", 'text'))
-        .html(pinName)
-        .attr({
-          x : 0,
-          y : 0,    
-          'dominant-baseline': 'baseline',
-          'text-anchor': 'start',
-          'font-family' : 'sans-serif',
-          'font-size' : fontSize(pinName, chipHeightPins),
-          style: 'transform: rotate(270deg) translate(-' +  (chipHeight - .2) + 'mm, ' + (x + .6) + 'mm);',
-        })
-      );          
+    if (pinNum <= numPins / 2) {
+      drawPin({
+        x: x,
+        chipHeight: chipHeight,
+        chipHeightPins: chipHeightPins,
+        svgChip: svgChip,
+        side: 'bottom',
+        pinName: pinName,
+      });
       x += globals.pinDistance;
-    
+
     // top side
     } else {
       x = x - globals.pinDistance;
-      svgChip.append($(document.createElementNS("http://www.w3.org/2000/svg", 'text'))
-        .html(pinName)
-        .attr({
-          x : 0,
-          y : 0,              
-          'dominant-baseline': 'baseline',
-          'text-anchor': 'end',
-          'font-family' : 'sans-serif',
-          'font-size' : fontSize(pinName, chipHeightPins),
-          style: 'transform: rotate(270deg) translate(-.3mm, ' + (x + .7) + 'mm);',
-       })
-     );
+      drawPin({
+        x: x,
+        chipHeight: chipHeight,
+        chipHeightPins: chipHeightPins,
+        svgChip: svgChip,
+        side: 'top',
+        pinName: pinName,
+      });
     }
     
   }); // end of for each pin
@@ -113,6 +105,44 @@ function drawChip(chipName) {
   }
 }
 
+/**
+ * Draw a single pin on an IC.
+ */
+function drawPin(pinData) {
+  if (pinData.pinName.startsWith('/')) {
+    pinData.activeLow = true;
+    pinData.pinName = pinData.pinName.substring(1)
+  }
+  if (pinData.side === 'bottom') {
+    pinData.svgChip.append($(document.createElementNS("http://www.w3.org/2000/svg", 'text'))
+      .html(pinData.pinName)
+      .attr({
+        x: 0,
+        y: 0,
+        'text-decoration': pinData.activeLow ? 'overline' : '',
+        'dominant-baseline': 'baseline',
+        'text-anchor': 'start',
+        'font-family': 'sans-serif',
+        'font-size': fontSize(pinData.pinName, pinData.chipHeightPins),
+        style: 'transform: rotate(270deg) translate(-' + (pinData.chipHeight - .2) + 'mm, ' + (pinData.x + .6) + 'mm);',
+      })
+    );
+  } else {
+    pinData.svgChip.append($(document.createElementNS("http://www.w3.org/2000/svg", 'text'))
+      .html(pinData.pinName)
+      .attr({
+        x: 0,
+        y: 0,
+        'text-decoration': pinData.activeLow ? 'overline' : '',
+        'dominant-baseline': 'baseline',
+        'text-anchor': 'end',
+        'font-family': 'sans-serif',
+        'font-size': fontSize(pinData.pinName, pinData.chipHeightPins),
+        style: 'transform: rotate(270deg) translate(-.3mm, ' + (pinData.x + .7) + 'mm);',
+      })
+    );
+  }
+}
 
 /**
   * Calculate font size according to pinName string length
