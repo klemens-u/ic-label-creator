@@ -3,12 +3,23 @@
  * License: GPLv3
  */
 
-/**
-  * Draw Chip by name
-  */
-function drawChip(chipName) {
+/*
+ * Draw a chip
+ *
+ * Custom defaults can be set in your chip collection:
+ *     var globals = {
+ *       ...
+ *       defaultChipLogicFamily : 'LS',
+ *       defaultChipSeries      : '74',
+ *     };
+ *  
+ * @param (string) chipName     The chipname as defined in chips.js
+ * @param (string) family       optional, the logic family, default=LS (e.g LS, HC, ...)  
+ * @param (string) series       optional, the series, default=74 (e.g. 74, 54)
+ */
+function drawChip(chipName, series, type) {
   
-  console.log('=== ' + chipName);
+  console.log('=== ', chipName, type, series);
   
   var chip = chips[chipName];
   var numPins = Object.keys(chip.pins).length;
@@ -47,8 +58,11 @@ function drawChip(chipName) {
   }));
   
   // DRAW CHIP MODEL + DESCRIPTION
+
+  tweakedChipName = tweakChipName(chipName, series, type);
+  
   svgChip.append($(document.createElementNS("http://www.w3.org/2000/svg", 'text'))
-    .html('&nbsp;&nbsp;' + chipName + ' ' + chip.description)
+    .html('&nbsp;&nbsp;' + tweakedChipName + ' ' + chip.description)
     .attr({
       x : '50%',
       y : chipHeight / 2 + .2  + 'mm',
@@ -105,6 +119,44 @@ function drawChip(chipName) {
   }
 }
 
+/*
+ * Allow to tweak series (54, 74) and logic family (LS, HC, HCT, ...)
+ *
+ * Custom defaults can be set in your chip collection:
+ *     var globals = {
+ *       ...
+ *       defaultChipLogicFamily : 'LS',
+ *       defaultChipSeries      : '74',
+ *     };
+ *  
+ * @param (string) chipName     The chipname as defined in chips.js
+ * @param (string) family       optional, the logic family, default=LS (e.g LS, HC, ...)  
+ * @param (string) series       optional, the series, default=74 (e.g. 74, 54)
+ */
+function tweakChipName(chipName, family, series) {
+
+  if (family === undefined) {
+    if (typeof globals.defaultChipLogicFamily === 'undefined') {
+      family = 'LS';
+    } else {
+      family = globals.defaultChipLogicFamily;
+    }
+  } 
+
+  if (series === undefined) {
+    if (typeof globals.defaultChipSeries === 'undefined') {
+      series = '74';
+    } else {
+      series = globals.defaultChipSeries;
+    }
+  }
+  
+  chipName = chipName.replace(/^74LS/, series + family);
+  
+  return chipName;
+}  
+
+
 /**
  * Draw a single pin on an IC.
  */
@@ -143,6 +195,7 @@ function drawPin(pinData) {
     );
   }
 }
+
 
 /**
   * Calculate font size according to pinName string length

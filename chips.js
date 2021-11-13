@@ -1,4 +1,20 @@
-//Create Overline Symbols: https://fsymbols.com/generators/overline/
+/*
+ * Chip library
+ *
+ *
+ * Create overlines with a leading slash "/"
+ * Example: "/EN"
+ *
+ * Always use "74LS" as default/placeholder. You can override the series and 
+ * silicon type in the drawChip() function
+ *
+ * Also supported are unicode overlays: https://fsymbols.com/generators/overline/
+ * TODO: convert older pinouts from unicode to slash prefix
+ *
+ * (C) Klemens Ullmann-Marx / www.ull.at and contributors
+ * License: GPLv3
+ */
+
 var chips = {
     
   '74LS00' : {
@@ -23,7 +39,7 @@ var chips = {
     },
   },
   
-  '74HC00' : {
+  '74LS00' : {
     description : '4xNAND',
     type: 'gate',
     pins: {
@@ -129,6 +145,28 @@ var chips = {
       11: 'Y4',
       12: 'A4',
       13: 'B4',
+      14: '+',
+    },
+  },  
+  
+  '74LS14' : {
+    description : '6x⎎NOT',
+    type: 'gate',
+    pins: {
+      1 : 'A1',
+      2 : 'Y1',
+      3 : 'A2',
+      4 : 'Y2',
+      5 : 'A3',
+      6 : 'Y3',
+      7 : '⏚',
+      
+      8 : 'Y4',
+      9 : 'A4',
+      10: 'Y5',
+      11: 'A5',
+      12: 'Y6',
+      13: 'A6',
       14: '+',
     },
   },    
@@ -245,7 +283,32 @@ var chips = {
       15: 'Y0',
       16: '+',
     },
-  },    
+  },   
+  
+  
+  '74LS153' : {
+    description : '2x4to1 MUX',
+    type: 'mux',
+    pins: {
+      1 : '/EnA',
+      2 : 'S0',
+      3 : 'A3',
+      4 : 'A2',
+      5 : 'A1',
+      6 : 'A0',
+      7 : 'YA',
+      8 : '⏚',
+      
+      9 : 'YB',
+      10: 'B0',
+      11: 'B1',
+      12: 'B2',
+      13: 'B3',
+      14: 'S1',
+      15: '/EnB',
+      16: '+',
+    },
+  },       
   
   '74LS157' : {
     description : '4x2to1 MUX',
@@ -266,7 +329,7 @@ var chips = {
       12: 'Y4',
       13: 'B4',
       14: 'A4',
-      15: 'STRB',
+      15: '/EN',
       16: '+',
     },
   },       
@@ -275,7 +338,7 @@ var chips = {
     description : '4bit Count',
     type: 'counter',
     pins: {
-      1 : 'CLR',
+      1 : '/CLR',
       2 : 'CLK',
       3 : 'A',
       4 : 'B',
@@ -284,7 +347,7 @@ var chips = {
       7 : 'ENP',
       8 : '⏚',
       
-      9 : 'L̅D̅',
+      9 : '/LD',
       10: 'ENT',
       11: 'QD',
       12: 'QC',
@@ -294,6 +357,30 @@ var chips = {
       16: '+',
     },
   },   
+  
+  '74LS169' : {
+    description : '4b Cnt ↑/↓',
+    type: 'counter',
+    pins: {
+      1 : 'U/D̅',
+      2 : 'CLK',
+      3 : 'A',
+      4 : 'B',
+      5 : 'C',
+      6 : 'D',
+      7 : 'ENP',
+      8 : '⏚',
+      
+      9 : '/LD',
+      10: 'ENT',
+      11: 'QD',
+      12: 'QC',
+      13: 'QB',
+      14: 'QA',
+      15: 'CAR',
+      16: '+',
+    },
+  },     
   
   '74LS173' : {
     description : '4bit Regist.',
@@ -831,7 +918,40 @@ var chips = {
       27: 'W̅E̅',
       28: '+',       
     },
-  },      
+  },     
+  
+  '7C128A' : {
+    description : '2Kx8 SRAM (16K)',
+    type: '',
+    heightPins: 3,
+    pins: {
+      1 : 'A7',
+      2 : 'A6',
+      3 : 'A5',
+      4 : 'A4',
+      5 : 'A3',
+      6 : 'A2',
+      7 : 'A1',
+      8 : 'A0',
+      9 : 'IO0',
+      10: 'IO1',
+      11: 'IO2',
+      12: '⏚',
+      
+      13: 'IO3',
+      14: 'IO4',
+      15: 'IO5',
+      16: 'IO6',
+      17: 'IO7',
+      18: '/CE',
+      19: 'A10',
+      20: '/OE',
+      21: '/WE',
+      22: 'A9',
+      23: 'A8',
+      24: '+',        
+    },
+  },    
   
   // empty template
   ' ' : {
