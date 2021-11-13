@@ -1,5 +1,5 @@
 # ic-label-creator
-Javascript/SVG Label Creator for IC Chips
+Javascript/SVG Label Creator for IC Chip Pinouts
 
 <img src="/assets/readme-example-labels.png" />
 
