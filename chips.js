@@ -692,7 +692,7 @@ var chips = {
     },
   },      
   
-  '74HC595' : {
+  '74LS595' : {
     description : '8b Shift Reg',
     type: 'flipflop',
     pins: {
