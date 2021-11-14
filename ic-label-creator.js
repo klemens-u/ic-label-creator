@@ -22,6 +22,13 @@ function drawChip(chipName, series, type) {
   console.log('=== ', chipName, type, series);
   
   var chip = chips[chipName];
+  
+  if (chip === undefined) {
+    alert('Error: unknown chip "' + chipName + '". Please check spelling or add pinout to chips.js.');
+    
+    return;
+  }
+  
   var numPins = Object.keys(chip.pins).length;
   var chipWidth = numPins / 2 * globals.pinDistance + 1;
   var chipHeightPins = ('heightPins' in chip) ? chip.heightPins : 3;
