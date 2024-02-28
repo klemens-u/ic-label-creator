@@ -5,7 +5,7 @@
  * Create overlines with a leading slash "/"
  * Example: "/EN"
  *
- * Always use "74LS" as default/placeholder. You can override the series and 
+ * Always use "74LS" as default/placeholder. You can override the series and
  * silicon type in the drawChip() function
  *
  * Also supported are unicode overlays: https://fsymbols.com/generators/overline/
@@ -16,7 +16,7 @@
  */
 
 var chips = {
-    
+
   '74LS00' : {
     description : '4xNAND',
     type: 'gate',
@@ -28,7 +28,7 @@ var chips = {
       5 : 'B2',
       6 : 'Y2',
       7 : '⏚',
-      
+
       8 : 'Y3',
       9 : 'A3',
       10: 'B3',
@@ -38,29 +38,29 @@ var chips = {
       14: '+',
     },
   },
-  
-  '74LS00' : {
-    description : '4xNAND',
+
+  '74LS01' : {
+    description : '4xNAND (hiZ)',
     type: 'gate',
     pins: {
-      1 : 'A1',
-      2 : 'B1',
-      3 : 'Y1',
-      4 : 'A2',
-      5 : 'B2',
-      6 : 'Y2',
+      1 : 'Y1',
+      2 : 'A1',
+      3 : 'B1',
+      4 : 'Y2',
+      5 : 'A2',
+      6 : 'B2',
       7 : '⏚',
-      
-      8 : 'Y3',
-      9 : 'A3',
-      10: 'B3',
-      11: 'Y4',
-      12: 'A4',
-      13: 'B4',
+
+      8 : 'A3',
+      9 : 'B3',
+      10: 'Y3',
+      11: 'A4',
+      12: 'B4',
+      13: 'Y4',
       14: '+',
     },
   },
-  
+
   '74LS02' : {
     description : '4xNOR',
     type: 'gate',
@@ -72,7 +72,7 @@ var chips = {
       5 : 'A2',
       6 : 'B2',
       7 : '⏚',
-      
+
       8 : 'A3',
       9 : 'B3',
       10: 'Y3',
@@ -81,8 +81,8 @@ var chips = {
       13: 'Y4',
       14: '+',
     },
-  },    
-  
+  },
+
   '74LS04' : {
     description : '6xNOT',
     type: 'gate',
@@ -94,7 +94,7 @@ var chips = {
       5 : 'A3',
       6 : 'Y3',
       7 : '⏚',
-      
+
       8 : 'Y4',
       9 : 'A4',
       10: 'Y5',
@@ -104,7 +104,7 @@ var chips = {
       14: '+',
     },
   },
-  
+
   '74LS07' : {
     description : '6x Buffer',
     type: 'gate',
@@ -116,7 +116,7 @@ var chips = {
       5 : 'A3',
       6 : 'Y3',
       7 : '⏚',
-      
+
       8 : 'Y4',
       9 : 'A4',
       10: 'Y5',
@@ -125,8 +125,8 @@ var chips = {
       13: 'A6',
       14: '+',
     },
-  },       
-  
+  },
+
   '74LS08' : {
     description : '4xAND',
     type: 'gate',
@@ -138,7 +138,7 @@ var chips = {
       5 : 'B2',
       6 : 'Y2',
       7 : '⏚',
-      
+
       8 : 'Y3',
       9 : 'A3',
       10: 'B3',
@@ -147,8 +147,8 @@ var chips = {
       13: 'B4',
       14: '+',
     },
-  },  
-  
+  },
+
   '74LS14' : {
     description : '6x⎎NOT',
     type: 'gate',
@@ -160,7 +160,7 @@ var chips = {
       5 : 'A3',
       6 : 'Y3',
       7 : '⏚',
-      
+
       8 : 'Y4',
       9 : 'A4',
       10: 'Y5',
@@ -169,8 +169,8 @@ var chips = {
       13: 'A6',
       14: '+',
     },
-  },    
-  
+  },
+
   '74LS32' : {
     description : '4xOR',
     type: 'gate',
@@ -182,7 +182,7 @@ var chips = {
       5 : 'B2',
       6 : 'Y2',
       7 : '⏚',
-      
+
       8 : 'Y3',
       9 : 'A3',
       10: 'B3',
@@ -191,8 +191,30 @@ var chips = {
       13: 'B4',
       14: '+',
     },
-  },      
-  
+  },
+
+  '74LS74' : {
+    description: '2xD-FF',
+    type: 'flipflop',
+    pins: {
+      1: '1C̅L̅R̅',
+      2: '1D',
+      3: '1CLK',
+      4: '1P̅R̅E̅',
+      5: '1Q',
+      6: '1Q̅',
+      7: '⏚',
+
+      8:  '2Q̅',
+      9:  '2Q',
+      10: '2P̅R̅E̅',
+      11: '2CLK',
+      12: '2D',
+      13: '2C̅L̅R̅',
+      14:  '+',
+    }
+  },
+
   '74LS86' : {
     description : '4xXOR',
     type: 'gate',
@@ -204,7 +226,7 @@ var chips = {
       5 : 'B2',
       6 : 'Y2',
       7 : '⏚',
-      
+
       8 : 'Y3',
       9 : 'A3',
       10: 'B3',
@@ -213,8 +235,8 @@ var chips = {
       13: 'B4',
       14: '+',
     },
-  },      
-  
+  },
+
   '74LS107' : {
     description : '2xJK-FF',
     type: 'flipflop',
@@ -226,7 +248,7 @@ var chips = {
       5 : '2Q',
       6 : '2Q̅',
       7 : '⏚',
-      
+
       8 : '2J',
       9 : '2CLK',
       10: '2C̅L̅R̅',
@@ -235,8 +257,8 @@ var chips = {
       13: '1C̅L̅R̅',
       14: '+',
     },
-  },          
-  
+  },
+
   '74LS138' : {
     description : '3to8 Decod',
     type: 'demux',
@@ -249,7 +271,7 @@ var chips = {
       6 : 'EN3',
       7 : 'O̅7',
       8 : '⏚',
-      
+
       9 : 'O̅6',
       10: 'O̅5',
       11: 'O̅4',
@@ -260,32 +282,31 @@ var chips = {
       16: '+',
     },
   },
-  
+
   '74LS139' : {
     description : '2x2to4 Dec',
     type: 'demux',
     pins: {
-      1 : 'A',
-      2 : 'B',
-      3 : 'C',
-      4 : 'G2A',
-      5 : 'G2B',
-      6 : 'G1',
-      7 : 'Y7',
+      1 : '1G̅',
+      2 : '1A',
+      3 : '1B',
+      4 : '1Y0',
+      5 : '1Y1',
+      6 : '1Y2',
+      7 : '1Y3',
       8 : '⏚',
-      
-      9 : 'Y6',
-      10: 'Y5',
-      11: 'Y4',
-      12: 'Y3',
-      13: 'Y2',
-      14: 'Y1',
-      15: 'Y0',
+
+      9 : '2Y3',
+      10: '2Y2',
+      11: '2Y1',
+      12: '2Y0',
+      13: '2B',
+      14: '2A',
+      15: '2G̅',
       16: '+',
     },
-  },   
-  
-  
+  },
+
   '74LS153' : {
     description : '2x4to1 MUX',
     type: 'mux',
@@ -298,7 +319,7 @@ var chips = {
       6 : 'A0',
       7 : 'YA',
       8 : '⏚',
-      
+
       9 : 'YB',
       10: 'B0',
       11: 'B1',
@@ -308,8 +329,8 @@ var chips = {
       15: '/EnB',
       16: '+',
     },
-  },       
-  
+  },
+
   '74LS157' : {
     description : '4x2to1 MUX',
     type: 'mux',
@@ -322,7 +343,7 @@ var chips = {
       6 : 'B2',
       7 : 'Y2',
       8 : '⏚',
-      
+
       9 : 'Y3',
       10: 'B3',
       11: 'A3',
@@ -332,8 +353,8 @@ var chips = {
       15: '/EN',
       16: '+',
     },
-  },       
-  
+  },
+
   '74LS161' : {
     description : '4bit Count',
     type: 'counter',
@@ -346,7 +367,7 @@ var chips = {
       6 : 'D',
       7 : '/ENP',
       8 : '⏚',
-      
+
       9 : '/LD',
       10: '/ENT',
       11: 'QD',
@@ -356,8 +377,30 @@ var chips = {
       15: 'CAR',
       16: '+',
     },
-  },   
-  
+  },
+
+  '74LS164': {
+    description: '8b shift reg',
+    type: 'flipflop',
+    pins: {
+      1: 'A',
+      2: 'B',
+      3: 'QA',
+      4: 'QB',
+      5: 'QC',
+      6: 'QD',
+      7: '⏚',
+
+      8:  'CLK',
+      9:  'C̅L̅R̅',
+      10: 'QE',
+      11: 'QF',
+      12: 'QG',
+      13: 'QH',
+      14: '+',
+    }
+  },
+
   '74LS169' : {
     description : '4b Cnt ↑/↓',
     type: 'counter',
@@ -370,7 +413,7 @@ var chips = {
       6 : 'D',
       7 : '/ENP',
       8 : '⏚',
-      
+
       9 : '/LD',
       10: '/ENT',
       11: 'QD',
@@ -380,8 +423,8 @@ var chips = {
       15: 'CAR',
       16: '+',
     },
-  },     
-  
+  },
+
   '74LS173' : {
     description : '4bit Regist.',
     datasheet: 'http://www.ti.com/lit/ds/symlink/sn54173.pdf',
@@ -395,7 +438,7 @@ var chips = {
       6 : '4Q',
       7 : 'CLK',
       8 : '⏚',
-      
+
       9 : '/IE1',
       10: '/IE2',
       11: '1D',
@@ -405,8 +448,32 @@ var chips = {
       15: 'CLR',
       16: '+',
     },
-  }, 
-  
+  },
+
+  '74LS175' : {
+    description: '4xD-FF',
+    type: 'flipflop',
+    pins: {
+      1: 'C̅L̅R̅',
+      2: '1Q',
+      3: '1Q̅',
+      4: '1D',
+      5: '2D',
+      6: '2Q̅',
+      7: '2Q',
+      8: '⏚',
+
+      9:  'CLK',
+      10: '3Q',
+      11: '3Q̅',
+      12: '3D',
+      13: '4D',
+      14: '4Q̅',
+      15: '4Q',
+      16:  '+',
+    }
+  },
+
   '74189' : {
     description : '64bit RAM',
     type: 'ram',
@@ -419,7 +486,7 @@ var chips = {
       6 : 'D2',
       7 : 'S2',
       8 : '⏚',
-      
+
       9 : 'S3',
       10: 'D3',
       11: 'S4',
@@ -428,9 +495,9 @@ var chips = {
       14: 'A2',
       15: 'A1',
       16: '+',
-    }, 
+    },
   },
-  
+
   '74LS193' : {
     description : '4b Cnt ↑/↓',
     type: 'counter',
@@ -443,7 +510,7 @@ var chips = {
       6 : 'QC',
       7 : 'QD',
       8 : '⏚',
-      
+
       9 : 'D',
       10: 'C',
       11: 'L̅D̅',
@@ -453,9 +520,9 @@ var chips = {
       15: 'A',
       16: '+',
     },
-  },  
-  
-  
+  },
+
+
   '74LS244' : {
     description : '8bit Buf/Linedrv',
     type: 'buffer',
@@ -470,7 +537,7 @@ var chips = {
       8 : '1A4',
       9 : '2Y1',
       10: '⏚',
-      
+
       11: '2A1',
       12: '1Y4',
       13: '2A2',
@@ -482,8 +549,8 @@ var chips = {
       19: '2̅E̅N̅',
       20: '+',
     },
-  },   
-  
+  },
+
   '74LS245' : {
     description : '8bit Bus Transcv',
     type: 'bus-transceiver',
@@ -498,7 +565,7 @@ var chips = {
       8 : 'A7',
       9 : 'A8',
       10: '⏚',
-      
+
       11: 'B8',
       12: 'B7',
       13: 'B6',
@@ -510,8 +577,8 @@ var chips = {
       19: 'E̅N̅',
       20: '+',
     },
-  },    
-  
+  },
+
   '74LS273' : {
     description : '8bit Register',
     type: 'register',
@@ -526,7 +593,7 @@ var chips = {
       8 : 'D3',
       9 : 'Q3',
       10: '⏚',
-      
+
       11: 'CLK',
       12: 'Q4',
       13: 'D4',
@@ -538,8 +605,8 @@ var chips = {
       19: 'Q7',
       20: '+',
     },
-  },    
-  
+  },
+
   '74LS283' : {
     description : '4bit Adder',
     type: 'adder',
@@ -560,10 +627,10 @@ var chips = {
       14: 'A3',
       15: 'B3',
       16: '+',
-    }, 
-  },    
+    },
+  },
 
-  
+
   '7130LA' : {
     description : '1Kx8 SRAM (1KB)',
     type: 'ram',
@@ -593,7 +660,7 @@ var chips = {
       22: 'IO6',
       23: 'IO7',
       24: '⏚',
-      
+
       25: 'IO0',
       26: 'IO1',
       27: 'IO2',
@@ -619,9 +686,9 @@ var chips = {
       47: 'C̅E̅',
       48: '+',
     },
-  },    
-  
-  
+  },
+
+
   '28C16' : {
     description : '2Kx8 EEPROM (2KB)',
     type: 'eeprom',
@@ -639,7 +706,7 @@ var chips = {
       10: 'IO1',
       11: 'IO2',
       12: '⏚',
-      
+
       13: 'IO3',
       14: 'IO4',
       15: 'IO5',
@@ -654,7 +721,7 @@ var chips = {
       24: '+',
     },
   },
-  
+
   '28C64' : {
     description : '8Kx8 EEPROM (8KB)',
     type: 'eeprom',
@@ -674,7 +741,7 @@ var chips = {
       12: 'IO1',
       13: 'IO2',
       14: '⏚',
-      
+
       15: 'IO3',
       16: 'IO4',
       17: 'IO5',
@@ -690,8 +757,8 @@ var chips = {
       27: 'W̅E̅',
       28: '+',
     },
-  },      
-  
+  },
+
   '74LS595' : {
     description : '8b Shift Reg',
     type: 'flipflop',
@@ -704,7 +771,7 @@ var chips = {
       6 : 'QG',
       7 : 'QH',
       8 : '⏚',
-      
+
       9 : "QH'",
       10: 'S̅C̅L̅R̅',
       11: 'SCLK',
@@ -714,8 +781,8 @@ var chips = {
       15: 'QA',
       16: '+',
     },
-  },    
-  
+  },
+
   '555' : {
     description : '',
     type: 'analog',
@@ -731,7 +798,7 @@ var chips = {
       8 : '+',
     },
   },
-  
+
   'C555' : {
     description : '',
     type: 'analog',
@@ -746,8 +813,8 @@ var chips = {
       7 : 'DCH',
       8 : '+',
     },
-  },          
-  
+  },
+
   'W65C02' : {
     description : 'CPU',
     type: 'cpu',
@@ -773,7 +840,7 @@ var chips = {
       18: 'A9',
       19: 'A10',
       20: 'A11',
-      
+
       21: '⏚',
       22: 'A12',
       23: 'A13',
@@ -796,7 +863,7 @@ var chips = {
       40: 'RESB',
     },
   },
-  
+
   'W65C22' : {
     description : 'VIA',
     type: 'via',
@@ -822,7 +889,7 @@ var chips = {
       18: 'CB1',
       19: 'CB2',
       20: '+',
-      
+
       21: 'IRQB',
       22: 'RWB',
       23: 'CS2B',
@@ -844,8 +911,8 @@ var chips = {
       39: 'CA2',
       40: 'CA1',
     },
-  },        
-  
+  },
+
   '28C256' : {
     description : '32Kx8 EEPROM',
     type: 'eeprom',
@@ -865,7 +932,7 @@ var chips = {
       12: 'I/O1',
       13: 'I/O2',
       14: '⏚',
-      
+
       15: 'I/O3',
       16: 'I/O4',
       17: 'I/O5',
@@ -875,14 +942,14 @@ var chips = {
       21: 'A10',
       22: 'O̅E̅',
       23: 'A11',
-      24: 'A9', 
+      24: 'A9',
       25: 'A8',
       26: 'A13',
       27: 'W̅E̅',
-      28: '+',       
+      28: '+',
     },
-  }, 
-  
+  },
+
   '62256' : {
     description : '32Kx8 SRAM (256K)',
     type: 'sram',
@@ -902,7 +969,7 @@ var chips = {
       12: 'I/O1',
       13: 'I/O2',
       14: '⏚',
-      
+
       15: 'I/O3',
       16: 'I/O4',
       17: 'I/O5',
@@ -912,14 +979,14 @@ var chips = {
       21: 'A10',
       22: 'O̅E̅',
       23: 'A11',
-      24: 'A9', 
+      24: 'A9',
       25: 'A8',
       26: 'A13',
       27: 'W̅E̅',
-      28: '+',       
+      28: '+',
     },
-  },     
-  
+  },
+
   '7C128A' : {
     description : '2Kx8 SRAM (16K)',
     type: '',
@@ -937,7 +1004,7 @@ var chips = {
       10: 'IO1',
       11: 'IO2',
       12: '⏚',
-      
+
       13: 'IO3',
       14: 'IO4',
       15: 'IO5',
@@ -949,10 +1016,10 @@ var chips = {
       21: '/WE',
       22: 'A9',
       23: 'A8',
-      24: '+',        
+      24: '+',
     },
-  },    
-  
+  },
+
   // empty template
   ' ' : {
     description : '',
@@ -982,8 +1049,8 @@ var chips = {
       21: '',
       22: '',
       23: '',
-      24: '',        
+      24: '',
     },
-  },    
+  },
 
 };  // end of var "chips"
